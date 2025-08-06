@@ -1,0 +1,153 @@
+\[CRM CONTACT]
+
+* crm.contact.add — Cria contato.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-add.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-add.html)
+* crm.contact.update — Atualiza contato existente.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-update.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-update.html)
+* crm.contact.get — Busca contato por ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-get.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-get.html)
+* crm.contact.list — Lista contatos.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-list.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-list.html)
+* crm.contact.delete — Exclui contato.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-delete.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-delete.html)
+* crm.contact.fields — Estrutura dos campos.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-fields.html](https://apidocs.bitrix24.com/api-reference/crm/contacts/crm-contact-fields.html)
+
+\[CRM COMPANY]
+
+* crm.company.add — Cria empresa.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-add.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-add.html)
+* crm.company.update — Atualiza empresa.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-update.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-update.html)
+* crm.company.get — Consulta empresa por ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-get.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-get.html)
+* crm.company.list — Lista empresas.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-list.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-list.html)
+* crm.company.delete — Exclui empresa.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-delete.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-delete.html)
+* crm.company.fields — Estrutura dos campos.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-fields.html](https://apidocs.bitrix24.com/api-reference/crm/companies/crm-company-fields.html)
+
+\[UNIVERSAL CRM / SPA]
+
+* crm.item.list — Lista registros de entidade.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-list.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-list.html)
+* crm.item.get — Busca registro por ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-get.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-get.html)
+* crm.item.add — Cria novo item.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-add.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-add.html)
+* crm.item.update — Atualiza item existente.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-update.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-update.html)
+* crm.item.delete — Exclui item.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-delete.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-delete.html)
+* crm.item.fields — Lista campos da entidade.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-fields.html](https://apidocs.bitrix24.com/api-reference/crm/universal/crm-item-fields.html)
+* crm.type.list — Descobre entityTypeId para SPAs.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/index.html](https://apidocs.bitrix24.com/api-reference/crm/universal/index.html)
+* Invoice (Faturas) pelo Universal CRM.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/universal/invoice.html](https://apidocs.bitrix24.com/api-reference/crm/universal/invoice.html)
+
+\[CRM AUTOMATION]
+
+* crm.automation.trigger — Executa gatilho manualmente.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/automation/crm-automation-trigger.html](https://apidocs.bitrix24.com/api-reference/crm/automation/crm-automation-trigger.html)
+* crm.automation.trigger.add — Adiciona gatilho.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-add.html](https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-add.html)
+* crm.automation.trigger.execute — Executa gatilho.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-execute.html](https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-execute.html)
+* crm.automation.trigger.list — Lista todos os gatilhos.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-list.html](https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-list.html)
+* crm.automation.trigger.delete — Remove gatilho.
+  Link: [https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-delete.html](https://apidocs.bitrix24.com/api-reference/crm/automation/triggers/crm-automation-trigger-delete.html)
+
+\[DISK]
+
+* disk.folder.addsubfolder — Cria subpasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-add-subfolder.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-add-subfolder.html)
+* disk.folder.copyto — Copia pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-copy-to.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-copy-to.html)
+* disk.folder.deletetree — Exclui pasta e subpastas.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-delete-tree.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-delete-tree.html)
+* disk.folder.getchildren — Lista conteúdo da pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-children.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-children.html)
+* disk.folder.getexternallink — Gera link externo da pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-external-link.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-external-link.html)
+* disk.folder.getfields — Campos de pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-fields.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get-fields.html)
+* disk.folder.get — Consulta pasta por ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-get.html)
+* disk.folder.markdeleted — Marca como excluída.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-mark-deleted.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-mark-deleted.html)
+* disk.folder.moveto — Move pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-move-to.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-move-to.html)
+* disk.folder.rename — Renomeia pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-rename.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-rename.html)
+* disk.folder.restore — Restaura pasta excluída.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-restore.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-restore.html)
+* disk.folder.uploadfile — Upload de arquivo para pasta.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-upload-file.html](https://apidocs.bitrix24.com/api-reference/disk/folder/disk-folder-upload-file.html)
+* disk.file.copyto — Copia arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-copy-to.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-copy-to.html)
+* disk.file.delete — Exclui arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-delete.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-delete.html)
+* disk.file.get — Busca arquivo por ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get.html)
+* disk.file.getfields — Campos de arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-fields.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-fields.html)
+* disk.file.getexternallink — Link externo de arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-external-link.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-external-link.html)
+* disk.file.getversions — Lista versões de arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-versions.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-get-versions.html)
+* disk.file.markdeleted — Marca como excluído.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-mark-deleted.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-mark-deleted.html)
+* disk.file.moveto — Move arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-move-to.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-move-to.html)
+* disk.file.rename — Renomeia arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-rename.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-rename.html)
+* disk.file.restorefromversion — Restaura versão de arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-restore-from-version.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-restore-from-version.html)
+* disk.file.restore — Restaura arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-restore.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-restore.html)
+* disk.file.uploadversion — Upload de nova versão.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-upload-version.html](https://apidocs.bitrix24.com/api-reference/disk/file/disk-file-upload-version.html)
+* disk.version.get — Busca versão de arquivo.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/version/disk-version-get.html](https://apidocs.bitrix24.com/api-reference/disk/version/disk-version-get.html)
+* disk.storage.addfolder — Cria pasta no storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-add-folder.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-add-folder.html)
+* disk.storage.get — Consulta storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get.html)
+* disk.storage.getfields — Campos do storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-fields.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-fields.html)
+* disk.storage.getforapp — Storage por app.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-for-app.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-for-app.html)
+* disk.storage.getlist — Lista storages.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-list.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-list.html)
+* disk.storage.gettypes — Tipos de storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-types.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-types.html)
+* disk.storage.getchildren — Lista conteúdo do storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-children.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-get-children.html)
+* disk.storage.rename — Renomeia storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-rename.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-rename.html)
+* disk.storage.uploadfile — Upload de arquivo no storage.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-upload-file.html](https://apidocs.bitrix24.com/api-reference/disk/storage/disk-storage-upload-file.html)
+* disk.rights.gettasks — Lista permissões.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/rights/disk-rights-get-tasks.html](https://apidocs.bitrix24.com/api-reference/disk/rights/disk-rights-get-tasks.html)
+* disk.attachedobject.get — Busca objeto anexado.
+  Link: [https://apidocs.bitrix24.com/api-reference/disk/attached-object/disk-attached-object-get.html](https://apidocs.bitrix24.com/api-reference/disk/attached-object/disk-attached-object-get.html)
+
+\[AI / INTELIGÊNCIA ARTIFICIAL]
+
+* ai.engine.register — Registra novo mecanismo IA.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/ai-engine-register.html](https://apidocs.bitrix24.com/api-reference/ai/ai-engine-register.html)
+* ai.engine.list — Lista mecanismos IA registrados.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/ai-engine-list.html](https://apidocs.bitrix24.com/api-reference/ai/ai-engine-list.html)
+* ai.engine.unregister — Remove mecanismo IA.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/ai-engine-unregister.html](https://apidocs.bitrix24.com/api-reference/ai/ai-engine-unregister.html)
+* ai.prompt.register — Registra novo prompt de IA.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/prompts/ai-prompt-register.html](https://apidocs.bitrix24.com/api-reference/ai/prompts/ai-prompt-register.html)
+* ai.prompt.unregister — Remove prompt IA.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/prompts/ai-prompt-unregister.html](https://apidocs.bitrix24.com/api-reference/ai/prompts/ai-prompt-unregister.html)
+* ai.prompts.markers — Lista marcadores de prompt.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/prompts/markers.html](https://apidocs.bitrix24.com/api-reference/ai/prompts/markers.html)
+* ai.prompts.conditions — Lista condições de prompt.
+  Link: [https://apidocs.bitrix24.com/api-reference/ai/prompts/conditions.html](https://apidocs.bitrix24.com/api-reference/ai/prompts/conditions.html)

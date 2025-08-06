@@ -1,0 +1,93 @@
+FLASHPEGASUS API - RESUMO TÉCNICO
+
+=== ENDPOINTS ===
+- Token: POST /FlashPegasus/rest/api/v1/token
+- Consulta: POST /FlashPegasus/rest/padrao/v2/consulta
+- Produção: https://webservice.flashpegasus.com.br/FlashPegasus/rest/padrao/v2/consulta
+- Homologação: https://homolog.flashpegasus.com.br/FlashPegasus/rest/padrao/v2/consulta
+
+=== AUTENTICAÇÃO ===
+- JWT Token obtido via API /api/v1/token
+- Header: Authorization: [JWT_TOKEN]
+- Content-Type: application/json
+
+=== PARÂMETROS DE CONSULTA ===
+{
+    "clienteId": 4411,
+    "cttId": [6344, 6365, 6090],
+    "numEncCli": ["1114338900", "1114533414", "1114620464"]
+}
+
+LIMITE: Máximo 100 objetos por consulta
+
+=== CÓDIGOS HTTP ===
+200 - Sucesso
+204 - Lista vazia
+401 - Não autorizado
+500 - Erro JSON
+
+=== ESTRUTURA DE RESPOSTA ===
+{
+    "statusRetorno": "00",
+    "hawbs": [
+        {
+            "codigoCartao": "798",
+            "hawbId": "02114716082",
+            "dtCol": "03/07/2021 00:00:00.000",
+            "dtPost": "03/07/2021 10:22:41.932",
+            "dtSla": "05/07/2021 23:59:59.000",
+            "contrato": "7069",
+            "baixa": [
+                {
+                    "grauParentesco": "Próprio",
+                    "recebedor": "Tiago",
+                    "rg": "784562143",
+                    "tentativas": "1",
+                    "dtBaixa": "03/07/2021 10:31:00.000"
+                }
+            ],
+            "historico": [
+                {
+                    "ocorrencia": "03/07/2021 10:21:42.041",
+                    "eventoId": "1400",
+                    "evento": "Postado - logistica iniciada",
+                    "frq": "SAO",
+                    "local": "RIO DE JANEIRO"
+                }
+            ]
+        }
+    ]
+}
+
+=== EVENTOS PRINCIPAIS ===
+1000 - HAWB - Dados cadastrados
+1100 - Em arquivo - aguardando postagem  
+1400 - Postado - logística iniciada
+2000 - Preparada para transferência
+3000 - Objeto recebido
+4100 - Entrega em andamento (na rua)
+4200 - Entrega NÃO efetuada
+4300 - Entrega registrada
+5000 - Comprovante registrado
+6100 - Devolução protocolada - FRANQUIA
+6110 - Devolução protocolada - AO CLIENTE
+
+=== SITUAÇÕES DE NÃO ENTREGA ===
+500 - Endereço errado/insuficiente
+501 - Recusado pelo destinatário
+503 - Difícil acesso
+504 - Mudou-se
+600 - Destinatário ausente
+601 - Atraso no roteiro
+800 - Encomenda extraviada - Perda
+801 - Encomenda extraviada - Furto/Roubo
+
+=== DADOS DISPONÍVEIS ===
+- Data/hora de cada evento
+- Local atual (cidade)
+- Franquia responsável
+- Nome do recebedor (quando entregue)
+- RG do recebedor
+- Número de tentativas
+- Motivo detalhado de não entrega
+- Histórico completo de movimentação

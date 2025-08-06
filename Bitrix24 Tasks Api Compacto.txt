@@ -1,0 +1,235 @@
+\[TAREFAS PRINCIPAIS]
+
+* tasks.task.add — Cria nova tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-add.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-add.html)
+* tasks.task.update — Atualiza dados da tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-update.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-update.html)
+* tasks.task.get — Busca uma tarefa específica.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get.html)
+* tasks.task.list — Lista tarefas filtradas.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-list.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-list.html)
+* tasks.task.delete — Exclui tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-delete.html)
+* tasks.task.getFields — Lista campos possíveis.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get-fields.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get-fields.html)
+* tasks.fields — Documentação dos campos.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/fields.html](https://apidocs.bitrix24.com/api-reference/tasks/fields.html)
+* tasks.task.files.attach — Anexa arquivos.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-files-attach.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-files-attach.html)
+* tasks.task.favorite.add — Adiciona favorito.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-favorite-add.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-favorite-add.html)
+* tasks.task.favorite.remove — Remove favorito.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-favorite-remove.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-favorite-remove.html)
+* tasks.task.approve — Aprova tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-approve.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-approve.html)
+* tasks.task.disapprove — Reprova tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-disapprove.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-disapprove.html)
+* tasks.task.complete — Marca tarefa como concluída.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-complete.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-complete.html)
+* tasks.task.defer — Adia tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-defer.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-defer.html)
+* tasks.task.renew — Reabre tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-renew.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-renew.html)
+* tasks.task.delegate — Delegar para outro usuário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-delegate.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-delegate.html)
+* tasks.task.history.list — Histórico da tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-history-list.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-history-list.html)
+* tasks.task.getAccess — Permissões do usuário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get-access.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-get-access.html)
+* tasks.task.counters.get — Contadores de tarefas.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-counters-get.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-counters-get.html)
+* tasks.task.pause — Pausa tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-pause.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-pause.html)
+* tasks.task.start — Inicia tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-start.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-start.html)
+* tasks.task.startWatch — Inicia monitoramento.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-start-watch.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-start-watch.html)
+* tasks.task.stopWatch — Para monitoramento.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-stop-watch.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-stop-watch.html)
+* tasks.task.mute — Silencia notificações.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-mute.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-mute.html)
+* tasks.task.unmute — Ativa notificações.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-unmute.html](https://apidocs.bitrix24.com/api-reference/tasks/tasks-task-unmute.html)
+* task.dependence.add — Adiciona dependência.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/task-dependence-add.html](https://apidocs.bitrix24.com/api-reference/tasks/task-dependence-add.html)
+* task.dependence.delete — Remove dependência.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/task-dependence-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/task-dependence-delete.html)
+
+\[ELAPSED ITEMS]
+
+* task.elapsedItem.add — Adiciona registro de tempo à tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-add.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-add.html)
+* task.elapsedItem.update — Atualiza registro de tempo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-update.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-update.html)
+* task.elapsedItem.get — Busca registro de tempo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get.html)
+* task.elapsedItem.getList — Lista registros de tempo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get-list.html)
+* task.elapsedItem.delete — Remove registro de tempo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-delete.html)
+* task.elapsedItem.isActionAllowed — Verifica permissões.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-is-action-allowed.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-is-action-allowed.html)
+* task.elapsedItem.getManifest — Estrutura e funcionalidades do recurso.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get-manifest.html](https://apidocs.bitrix24.com/api-reference/tasks/elapsed-item/task-elapsed-item-get-manifest.html)
+
+\[USER FIELDS]
+
+* task.item.userfield.add — Cria campo personalizado.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-add.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-add.html)
+* task.item.userfield.update — Atualiza campo personalizado.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-update.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-update.html)
+* task.item.userfield.get — Busca campo personalizado.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get.html)
+* task.item.userfield.delete — Exclui campo personalizado.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-delete.html)
+* task.item.userfield.getList — Lista campos personalizados.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-list.html)
+* task.item.userfield.getTypes — Tipos de campo personalizados.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-types.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-types.html)
+* task.item.userfield.getFields — Estrutura/metadados dos campos.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-fields.html](https://apidocs.bitrix24.com/api-reference/tasks/user-field/task-item-user-field-get-fields.html)
+
+\[COMENTÁRIOS DE TAREFA]
+
+* task.commentItem.add — Adiciona comentário à tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-add.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-add.html)
+* task.commentItem.update — Atualiza comentário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-update.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-update.html)
+* task.commentItem.get — Busca comentário pelo ID.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get.html)
+* task.commentItem.getList — Lista comentários da tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get-list.html)
+* task.commentItem.delete — Remove comentário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-delete.html)
+* task.commentItem.isActionAllowed — Permissões de comentário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-is-action-allowed.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-is-action-allowed.html)
+* task.commentItem.getManifest — Estrutura do recurso de comentários.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get-manifest.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/task-comment-item-get-manifest.html)
+* Eventos:
+
+  * onTaskCommentAdd — Evento adicionar comentário.
+    Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-add.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-add.html)
+  * onTaskCommentUpdate — Evento atualizar comentário.
+    Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-update.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-update.html)
+  * onTaskCommentDelete — Evento excluir comentário.
+    Link: [https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/comment-item/events-comment/on-task-comment-delete.html)
+
+\[CHECKLISTS]
+
+* task.checklistItem.add — Adiciona item ao checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-add.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-add.html)
+* task.checklistItem.update — Atualiza item do checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-update.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-update.html)
+* task.checklistItem.moveAfterItem — Reordena itens do checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-move-after-item.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-move-after-item.html)
+* task.checklistItem.get — Busca item do checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get.html)
+* task.checklistItem.getList — Lista itens do checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get-list.html)
+* task.checklistItem.complete — Marca item como concluído.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-complete.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-complete.html)
+* task.checklistItem.renew — Reabre item.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-renew.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-renew.html)
+* task.checklistItem.delete — Exclui item do checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-delete.html)
+* task.checklistItem.isActionAllowed — Permissões de checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-is-action-allowed.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-is-action-allowed.html)
+* task.checklistItem.getManifest — Estrutura do recurso checklist.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get-manifest.html](https://apidocs.bitrix24.com/api-reference/tasks/checklist-item/task-checklist-item-get-manifest.html)
+
+\[RESULTADOS E EVENTOS DE TAREFA]
+
+* tasks.task.result.list — Lista resultados de tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-list.html](https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-list.html)
+* tasks.task.result.addFromComment — Adiciona resultado via comentário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-add-from-comment.html](https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-add-from-comment.html)
+* tasks.task.result.deleteFromComment — Remove resultado de comentário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-delete-from-comment.html](https://apidocs.bitrix24.com/api-reference/tasks/result/tasks-task-result-delete-from-comment.html)
+* onTaskAdd — Evento criar tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-add.html](https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-add.html)
+* onTaskUpdate — Evento atualizar tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-update.html](https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-update.html)
+* onTaskDelete — Evento excluir tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/events-tasks/on-task-delete.html)
+
+\[STAGES, PLANNER, FLOW]
+
+* task.stages.add — Cria novo estágio Kanban.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-add.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-add.html)
+* task.stages.update — Atualiza estágio.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-update.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-update.html)
+* task.stages.get — Busca estágio.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-get.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-get.html)
+* task.stages.canMoveTask — Verifica se pode mover tarefa.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-can-move-task.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-can-move-task.html)
+* task.stages.moveTask — Move tarefa entre estágios.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-move-task.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-move-task.html)
+* task.stages.delete — Exclui estágio.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/stages/task-stages-delete.html)
+* task.planner.getList — Lista planejamento do usuário.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/planner/task-planner-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/planner/task-planner-get-list.html)
+* tasks.flow\.flow\.create — Cria novo fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-create.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-create.html)
+* tasks.flow\.flow\.update — Atualiza fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-update.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-update.html)
+* tasks.flow\.flow\.get — Busca fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-get.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-get.html)
+* tasks.flow\.flow\.delete — Exclui fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-delete.html)
+* tasks.flow\.flow\.isExists — Verifica existência de fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-is-exists.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-is-exists.html)
+* tasks.flow\.flow\.activate — Ativa fluxo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-activate.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-activate.html)
+* tasks.flow\.flow\.pin — Fixa fluxo como principal.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-pin.html](https://apidocs.bitrix24.com/api-reference/tasks/flow/tasks-flow-flow-pin.html)
+
+\[DEPRECATED / OBSOLETOS]
+
+* task.item.add — Adiciona tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add.html)
+* task.item.update — Atualiza tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-update.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-update.html)
+* task.item.delete — Exclui tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete.html)
+* task.item.list — Lista tarefas (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-list.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-list.html)
+* task.item.get-data — Busca dados da tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-data.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-data.html)
+* task.item.get-manifest — Estrutura método antigo.
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-manifest.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-manifest.html)
+* task.item.get-description — Busca descrição (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-description.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-description.html)
+* task.item.get-files — Arquivos de tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-files.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-files.html)
+* task.item.is-action-allowed — Permissões (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-is-action-allowed.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-is-action-allowed.html)
+* task.item.delegate — Delegar tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delegate.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delegate.html)
+* task.item.get-dependson — Dependências (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-dependson.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-get-dependson.html)
+* task.item.start-execution — Inicia execução (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-start-execution.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-start-execution.html)
+* task.item.complete — Completa tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-complete.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-complete.html)
+* task.item.defer — Adia tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-defer.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-defer.html)
+* task.item.renew — Reabre tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-renew.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-renew.html)
+* task.item.approve — Aprova tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-approve.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-approve.html)
+* task.item.disapprove — Reprova tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-disapprove.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-disapprove.html)
+* task.item.add-to-favourite — Favorita tarefa (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add-to-favourite.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add-to-favourite.html)
+* task.item.delete-from-favorite — Remove dos favoritos (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete-from-favorite.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete-from-favorite.html)
+* task.item.add-file — Adiciona arquivo (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add-file.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-add-file.html)
+* task.item.delete-file — Remove arquivo (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete-file.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-item-delete-file.html)
+* task-log-item-list — Histórico (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-log-item-list.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-item/task-log-item-list.html)
+* task-items-get-list — Lista tarefas (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-items-get-list.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-items-get-list.html)
+* task-comment-add — Adiciona comentário (antigo).
+  Link: [https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-comment-add.html](https://apidocs.bitrix24.com/api-reference/tasks/deprecated/task-comment-add.html)

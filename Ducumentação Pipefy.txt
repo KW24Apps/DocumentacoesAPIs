@@ -1,0 +1,265 @@
+[LINKS CONSULTADOS]
+https://developers.pipefy.com/reference/why-graphql
+https://developers.pipefy.com/reference/why-pipefys-graphql-api
+https://developers.pipefy.com/reference/pipefy-api-request-handling
+https://developers.pipefy.com/reference/creating-calls-with-graphql
+https://developers.pipefy.com/reference/graphql-structure
+https://developers.pipefy.com/reference/limits-and-best-practices
+https://developers.pipefy.com/reference/exploring-the-playground
+https://developers.pipefy.com/reference/mastering-the-documentation-your-guide-to-queries-and-mutations
+https://developers.pipefy.com/reference/postman-collection
+https://developers.pipefy.com/reference/authentication
+https://developers.pipefy.com/reference/service-accounts
+https://developers.pipefy.com/reference/personal-access-token
+https://developers.pipefy.com/reference/organizations
+https://developers.pipefy.com/reference/users
+https://developers.pipefy.com/reference/pipes
+https://developers.pipefy.com/reference/cards
+https://developers.pipefy.com/reference/fields
+https://developers.pipefy.com/reference/phases
+https://developers.pipefy.com/reference/pipe-reports
+https://developers.pipefy.com/reference/tables
+https://developers.pipefy.com/reference/table-records
+https://developers.pipefy.com/reference/summary-examples
+https://developers.pipefy.com/reference/agents-usage-details-query
+https://developers.pipefy.com/reference/update-ai-settings-mutation
+https://developers.pipefy.com/reference/automation
+https://developers.pipefy.com/reference/automation-actions
+https://developers.pipefy.com/reference/automation-events
+https://developers.pipefy.com/reference/automations-usage-details-query
+https://developers.pipefy.com/reference/retrieve-automations
+https://developers.pipefy.com/reference/automation-logs
+https://developers.pipefy.com/reference/automation-logs-by-repo
+https://developers.pipefy.com/reference/automation-initial-values
+https://developers.pipefy.com/reference/automation-event-attributes
+https://developers.pipefy.com/reference/automated-formula-operations
+https://developers.pipefy.com/reference/export-automation-jobs
+https://developers.pipefy.com/reference/automation-simulation
+https://developers.pipefy.com/reference/add-attachments-to-a-card-or-field
+https://developers.pipefy.com/reference/create-a-card-with-the-required-fields-fulfilled
+https://developers.pipefy.com/reference/create-fields-in-a-phase
+https://developers.pipefy.com/reference/move-card-to-a-different-phase
+https://developers.pipefy.com/reference/create-and-send-an-email-through-a-card
+https://developers.pipefy.com/reference/list-emails-from-a-card
+https://developers.pipefy.com/reference/create-a-pipe-with-start-form-configured
+https://developers.pipefy.com/reference/configure-a-start-form-on-existing-pipe
+https://developers.pipefy.com/reference/organization-usage-stats
+https://developers.pipefy.com/reference/retrieve-organization-settings
+https://developers.pipefy.com/reference/track-active-users-in-your-organization
+https://developers.pipefy.com/reference/get-resource-ids
+https://developers.pipefy.com/reference/pagination-basics
+https://developers.pipefy.com/reference/run-multiple-queries-or-mutations-in-a-single-request
+https://developers.pipefy.com/reference/get-organization-report
+https://developers.pipefy.com/reference/get-organization-reports
+https://developers.pipefy.com/reference/create-organization-report
+https://developers.pipefy.com/reference/update-organization-report
+https://developers.pipefy.com/reference/delete-organization-report
+https://developers.pipefy.com/reference/export-organization-report
+https://developers.pipefy.com/reference/get-reports
+https://developers.pipefy.com/reference/add-tags-to-resource
+https://developers.pipefy.com/reference/tag-categories
+https://developers.pipefy.com/reference/tags-by-category
+https://developers.pipefy.com/reference/tags-by-category-on-resource
+https://developers.pipefy.com/reference/update-tag-category
+https://developers.pipefy.com/reference/create-tags-in-bulk
+https://developers.pipefy.com/reference/update-tags-visibility
+https://developers.pipefy.com/reference/update-tag
+https://developers.pipefy.com/reference/create-tag
+https://developers.pipefy.com/reference/agent-usage-details-query
+https://developers.pipefy.com/reference/automation-usage-details-query
+https://developers.pipefy.com/reference/organization-usage-stats-query
+https://developers.pipefy.com/reference/set-user-favorite-pipes
+https://developers.pipefy.com/reference/set-user-roles-via-graphql-mutation
+https://developers.pipefy.com/reference/see-users-suggestions
+https://developers.pipefy.com/reference/search-for-field-dependencies
+https://developers.pipefy.com/reference/see-tickets
+https://developers.pipefy.com/reference/how-to-handle-errors
+https://developers.pipefy.com/reference/unauthorized-error
+https://developers.pipefy.com/reference/invalid-role-errors
+https://developers.pipefy.com/reference/field-type-not-found-error-resource-not-found
+https://developers.pipefy.com/reference/missing-required-argument-card-id-error-missingrequiredinputobjectattribute
+https://developers.pipefy.com/reference/email-rate-limit-exceeded-error-usage-limit-exceeded
+https://developers.pipefy.com/reference/card-could-not-be-moved-to-phase-error
+https://developers.pipefy.com/reference/invalid-input-error-invalid-input
+https://developers.pipefy.com/reference/status-and-error-handling
+https://developers.pipefy.com/reference/still-stuck
+https://developers.pipefy.com/reference/organization-webhooks
+https://developers.pipefy.com/reference/pipe-table-webhooks
+https://developers.pipefy.com/reference/importer
+https://developers.pipefy.com/reference/cards-importer
+https://developers.pipefy.com/reference/records-importer
+https://developers.pipefy.com/reference/the-graphql-endpoint
+
+
+[1. FUNDAMENTOS GRAPHQL]
+* Why GraphQL? – Vantagens (único endpoint, respostas sob medida, menos over‑fetch) e definição de Query vs Mutation. 
+* Why Pipefy GraphQL – Destaca flexibilidade de workflow, granularidade de permissão e ganho de performance específico da Pipefy.
+
+[2. REQUEST FLOW & BOAS PRÁTICAS]
+* Request Handling – Ciclo: Auth ➜ Parse ➜ Validate Schema ➜ Resolve ➜ Return/Errors. Usa códigos de status HTTP convencionais.
+* Creating Calls with GraphQL – Sempre POST para /graphql; corpo JSON { "query": "...", "variables": {...} }.
+* GraphQL Structure – Blocos: operationName, variables, seleção de campos aninhados.
+* Limits & Best Practices – Paginação cursor (args first / after), tempo máx. 30 s, payload 100 KB; prefira chamadas curtas.
+
+[3. TOOLING]
+* Playground – IDE on‑line com autocomplete; aceitar Header Authorization: Bearer <token>.
+* Postman Collection – JSON importável com exemplos prontos de Auth, Card, Automation etc.
+
+[4. AUTENTICAÇÃO]
+Tipo | Como gerar | Escopo | Vantagens | Header
+-----|-----------|--------|-----------|--------
+Personal Access Token (PAT) | UI → “My tokens” | Usuário | Simples para testes | Authorization: Bearer <token>
+Service Account | OAuth2 Client Credentials | App/server | Rotação automática, escopos isolados | mesmo header
+
+[5. OBJETOS CORE – QUERIES & MUTATIONS]
+
+5.1 ORGANIZATIONS
+{ organizations { id name } }
+{ organization(id:123) { name pipes{ id name } members{ user{email} } } }
+mutation { createOrganization(input:{ name:"New Org", industry:"technology" }) }
+mutation { updateOrganization(input:{ id:123, name:"Acme Inc" }) }
+mutation { deleteOrganization(input:{ id:123 }) }
+
+Copiar
+
+5.2 USERS
+{ user(id:456) { id name email role_name } }
+{ users(organization_id:123, first:20) { edges{ node{ id name email } } } }
+
+Copiar
+
+5.3 PIPES
+{ pipe(id:321){ id name start_form_fields{id label} phases{id name} } }
+mutation { createPipe(input:{ organization_id:123, name:"Onboarding" }){ pipe{id} } }
+mutation { updatePipe(input:{ id:321, name:"New Name" }){ pipe{id} } }
+mutation { deletePipe(input:{ id:321 }) }
+
+objectivec
+Copiar
+
+5.4 CARDS
+{ card(id:987){ title current_phase{name} fields{name value} } }
+{ cards(pipe_id:321, search:{title:"ABC"}) { edges{ node{id title} } } }
+mutation { createCard(input:{ pipe_id:321, title:"Novo", fields_attributes:[{field_id:"status", field_value:"open"}]}){ card{id} } }
+mutation { updateCard(input:{ id:987, title:"Atualizado" }){ card{id title} } }
+mutation { moveCardToPhase(input:{ card_id:987, destination_phase_id:654 }){ card{id current_phase{name}} } }
+mutation { deleteCard(input:{ id:987 }){ success } }
+
+Copiar
+
+5.5 FIELDS
+{ pipe(id:321){ fields{id label type required} } }
+mutation { createField(input:{ phase_id:654, label:"Priority", type:"select" }){ field{id} } }
+
+Copiar
+
+5.6 PHASES
+{ phase(id:654){ id name cards_count } }
+mutation { updatePhase(input:{ id:654, name:"Review" }){ phase{id} } }
+
+pgsql
+Copiar
+
+5.7 TABLES & RECORDS
+{ table(id:111){ name records(first:10){ edges{ node{id title} } } } }
+mutation { createTableRecord(input:{ table_id:111, title:"Row 1", fields_attributes:[{field_id:"col1", field_value:"Foo"}]}){ table_record{id} } }
+mutation { updateTableRecord(input:{ id:222, title:"Row 1 edit" }){ table_record{id} } }
+mutation { deleteTableRecord(input:{ id:222 }) }
+
+scss
+Copiar
+
+5.8 PIPE REPORTS – query pipeReports(pipe_id:321) e mutation createPipeReport.
+
+[6. AI & EXEMPLOS]
+* Agents Usage Details Query – agentsUsageDetails(organization_id:123){ tokens executions }
+* Update AI Settings – mutation { updateAISettings(input:{ pipe_id:321, ai_enabled:false }) }
+
+[7. AUTOMAÇÕES]
+{ automation(id:999){ id name enabled trigger{ event } actions{ type } } }
+{ retrieveAutomations(pipe_id:321){ edges{ node{id name} } } }
+{ automationLogs(automation_id:999, first:20){ edges{ node{ id status created_at } } } }
+{ automationsUsageDetails(organization_id:123){ month executions } }
+
+csharp
+Copiar
+Events → card_created, phase_changed, record_updated  
+Actions → createCard, moveCard, sendEmail, updateCardField, createRecord
+
+[8. RESUMO DE LIMITES]
+* Rate limit: 600 req/min org‑wide
+* Payload máx.: 100 KB por resposta
+* Timeout: 30 s
+* Paginação: first/after (máx 100)
+
+[9. ERROS COMUNS]
+Código | Motivo | Ação
+------ | ------ | ----
+401 Unauthorized | Token inválido | Verificar header/expiração
+403 invalid_role | Escopo insuficiente | Ajustar permissões do token
+404 resource_not_found | ID inexistente/fora do escopo | Checar IDs/org
+422 invalid_input | Campo obrigatório ausente | Conferir argumentos
+EmailRateLimitExceeded | >200 e‑mails/hora | Aguardar janela
+CardCouldNotBeMovedToPhase | Restrições da fase | Checar regras Kanban
+
+[10. PLAYGROUND & POSTMAN]
+* Playground – Melhor lugar para descobrir todos os tipos/args.
+* Postman JSON – Importar → setar variável token → rodar calls de exemplo.
+
+[AUTOMAÇÃO AVANÇADA]
+* automationLogsByRepo(repoId,status,searchTerm) – Lista logs de todas as automações de um pipe.
+* automationInitialValues(actionId) – Valores default para configurar ações (“apply_sla_rules”).
+* automationEventAttributes – Atributos dinâmicos disponíveis nos eventos.
+* automatedFormulaOperations – Operadores de fórmula válidos (SUM, COUNT, ROUND…).
+* exportAutomationJobs – Exporta execuções de automação em CSV.
+* automationSimulation – Simula a execução de uma automação (dry‑run).
+
+[AÇÃO EM CARD & COMUNICAÇÃO]
+* addAttachmentsToCardOrField – CreatePresignedUrl → upload → addAttachment.
+* createCardWithRequiredFields – Cria Card já com campos obrigatórios.
+* moveCardToPhase – moveCardToPhase(card_id,destination_phase_id).
+* createAndSendEmailThroughCard – sendCardEmail(input:{ card_id,… }).
+* listEmailsFromCard – card(id){ emails{…} }.
+
+[CAMPOS & FASE]
+* createFieldsInPhase – createPhaseField.
+* updatePhaseSettings – updatePhase(lateTasksThreshold…).
+
+[PIPE & START FORM]
+* createPipeWithStartFormConfigured / configureStartFormOnExistingPipe.
+
+[ORGANIZAÇÃO – STATS]
+* organizationUsageStats / retrieveOrganizationSettings / activeUsersStats.
+
+[REPORTS AVANÇADOS]
+{ reports(organization_id:123, type:ORGANIZATION){ edges{ node{id name type} } } }
+mutation{ createOrganizationReport(input:{ organization_id:123, name:"Monthly", query:"cards" }){ report{id} }}
+mutation{ updateOrganizationReport(input:{ id:77, name:"Updated" }){ report{id} }}
+mutation{ deleteOrganizationReport(input:{ id:77 }) }
+mutation{ exportOrganizationReport(input:{ report_id:77, format:CSV }){ exportId } }
+
+markdown
+Copiar
+
+[TAGS]
+* createTag / createTagsInBulk / addTagsToResource / updateTag / updateTagCategory / tagsByCategory / tagsByCategoryOnResource / updateTagsVisibility.
+
+[GERENCIAMENTO DE USUÁRIO]
+* setUserFavoritePipes
+* setUserRoles
+* userSuggestions
+
+[DEPENDÊNCIAS, TICKETS E AJUDA]
+* searchForFieldDependencies
+* seeTickets
+* how‑to‑handle‑errors, unauthorized, invalid‑role, etc.
+* status‑and‑error‑handling / still‑stuck
+
+[WEBHOOKS & IMPORTERS]
+* createOrganizationWebhook / createPipeWebhook / createTableWebhook.
+* importer / cardsImporter / recordsImporter.
+
+[ENDPOINT]
+* POST https://api.pipefy.com/graphql  
+Headers: `Authorization: Bearer <token>` e `Content-Type: application/json`.  
+Suporta múltiplas operações por payload (até 100 kB).

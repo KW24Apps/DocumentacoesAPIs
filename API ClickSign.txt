@@ -1,0 +1,150 @@
+### Fontes utilizadas
+
+[https://developers.clicksign.com/docs/veja-como-funciona-na-pr%C3%A1tica](https://developers.clicksign.com/docs/veja-como-funciona-na-pr%C3%A1tica)
+[https://developers.clicksign.com/docs/mensagens-de-erro](https://developers.clicksign.com/docs/mensagens-de-erro)
+[https://developers.clicksign.com/docs/seguranca](https://developers.clicksign.com/docs/seguranca)
+[https://developers.clicksign.com/docs/limite-de-requisicoes](https://developers.clicksign.com/docs/limite-de-requisicoes)
+[https://developers.clicksign.com/docs/envelope](https://developers.clicksign.com/docs/envelope)
+[https://developers.clicksign.com/docs/eventos-1](https://developers.clicksign.com/docs/eventos-1)
+[https://developers.clicksign.com/docs/documentos](https://developers.clicksign.com/docs/documentos)
+[https://developers.clicksign.com/docs/signatarios](https://developers.clicksign.com/docs/signatarios)
+[https://developers.clicksign.com/docs/tipos-de-notificacoes-do-signatario](https://developers.clicksign.com/docs/tipos-de-notificacoes-do-signatario)
+[https://developers.clicksign.com/docs/notificacoes](https://developers.clicksign.com/docs/notificacoes)
+[https://developers.clicksign.com/docs/docs-requisitos](https://developers.clicksign.com/docs/docs-requisitos)
+[https://developers.clicksign.com/docs/adicionar-requisito-de-qualificacao](https://developers.clicksign.com/docs/adicionar-requisito-de-qualificacao)
+[https://developers.clicksign.com/docs/adicionar-requisito-de-rubrica](https://developers.clicksign.com/docs/adicionar-requisito-de-rubrica)
+[https://developers.clicksign.com/docs/tipos-de-requisitos-de-autenticacao](https://developers.clicksign.com/docs/tipos-de-requisitos-de-autenticacao)
+[https://developers.clicksign.com/docs/observador-de-assinatura](https://developers.clicksign.com/docs/observador-de-assinatura)
+[https://developers.clicksign.com/docs/introducao-a-webhooks](https://developers.clicksign.com/docs/introducao-a-webhooks)
+[https://developers.clicksign.com/docs/cadastro-de-webhooks](https://developers.clicksign.com/docs/cadastro-de-webhooks)
+[https://developers.clicksign.com/docs/cadastro-de-webhooks-via-api](https://developers.clicksign.com/docs/cadastro-de-webhooks-via-api)
+[https://developers.clicksign.com/docs/eventos](https://developers.clicksign.com/docs/eventos)
+[https://developers.clicksign.com/docs/evento-add-signer](https://developers.clicksign.com/docs/evento-add-signer)
+[https://developers.clicksign.com/docs/evento-attempts-by-whatsapp-exceeded](https://developers.clicksign.com/docs/evento-attempts-by-whatsapp-exceeded)
+[https://developers.clicksign.com/docs/evento-auto-close](https://developers.clicksign.com/docs/evento-auto-close)
+[https://developers.clicksign.com/docs/evento-cancel](https://developers.clicksign.com/docs/evento-cancel)
+[https://developers.clicksign.com/docs/evento-close](https://developers.clicksign.com/docs/evento-close)
+[https://developers.clicksign.com/docs/evento-document-closed](https://developers.clicksign.com/docs/evento-document-closed)
+[https://developers.clicksign.com/docs/evento-deadline](https://developers.clicksign.com/docs/evento-deadline)
+[https://developers.clicksign.com/docs/evento-refusal](https://developers.clicksign.com/docs/evento-refusal)
+[https://developers.clicksign.com/docs/evento-remove-signer](https://developers.clicksign.com/docs/evento-remove-signer)
+[https://developers.clicksign.com/docs/evento-sign](https://developers.clicksign.com/docs/evento-sign)
+[https://developers.clicksign.com/docs/evento-update-auto-close](https://developers.clicksign.com/docs/evento-update-auto-close)
+[https://developers.clicksign.com/docs/evento-update-deadline](https://developers.clicksign.com/docs/evento-update-deadline)
+[https://developers.clicksign.com/docs/evento-upload](https://developers.clicksign.com/docs/evento-upload)
+[https://developers.clicksign.com/docs/exemplo-document](https://developers.clicksign.com/docs/exemplo-document)
+[https://developers.clicksign.com/docs/exemplo-signers](https://developers.clicksign.com/docs/exemplo-signers)
+[https://developers.clicksign.com/docs/disparos-de-webhooks](https://developers.clicksign.com/docs/disparos-de-webhooks)
+[https://developers.clicksign.com/docs/seguranca-de-webhooks](https://developers.clicksign.com/docs/seguranca-de-webhooks)
+[https://developers.clicksign.com/docs/melhores-praticas-webhooks](https://developers.clicksign.com/docs/melhores-praticas-webhooks)
+[https://developers.clicksign.com/docs/introdu%C3%A7%C3%A3o-ao-sso-com-saml](https://developers.clicksign.com/docs/introdu%C3%A7%C3%A3o-ao-sso-com-saml)
+[https://developers.clicksign.com/docs/como-realizar-a-implementa%C3%A7%C3%A3o-do-sso-com-saml](https://developers.clicksign.com/docs/como-realizar-a-implementa%C3%A7%C3%A3o-do-sso-com-saml)
+[https://developers.clicksign.com/docs/implementa%C3%A7%C3%A3o-na-clicksign](https://developers.clicksign.com/docs/implementa%C3%A7%C3%A3o-na-clicksign)
+[https://developers.clicksign.com/docs/informa%C3%A7%C3%B5es-gerais-aceite-via-whatsapp](https://developers.clicksign.com/docs/informa%C3%A7%C3%B5es-gerais-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/cancelar-envio-do-aceite-via-whatsapp](https://developers.clicksign.com/docs/cancelar-envio-do-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/visualizar-todos-os-aceites-enviados-atrav%C3%A9s-do-aceite-via-whatsapp](https://developers.clicksign.com/docs/visualizar-todos-os-aceites-enviados-atrav%C3%A9s-do-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/visualizar-aceite-via-whatsapp](https://developers.clicksign.com/docs/visualizar-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/criando-um-aceite-via-whatsapp](https://developers.clicksign.com/docs/criando-um-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/eventos-aceite-via-whatsapp](https://developers.clicksign.com/docs/eventos-aceite-via-whatsapp)
+[https://developers.clicksign.com/docs/disparos-de-webhooks-1](https://developers.clicksign.com/docs/disparos-de-webhooks-1)
+
+---
+
+### Visão Geral
+
+Plataforma de assinatura eletrônica. A API organiza recursos em: Documentos, Signatários, Envelopes, Notificações, Eventos, Webhooks, Requisitos, Aceite via WhatsApp e Autenticação.
+
+---
+
+### Documentos
+
+* Criar: POST /api/v1/documents (params: file, path, content\_base64)
+* Detalhar: GET /api/v1/documents/\:key
+* Cancelar: PATCH /api/v1/documents/\:key/cancel
+* Fechar: PATCH /api/v1/documents/\:key/close
+
+---
+
+### Signatários
+
+* Criar: POST /api/v1/signers (params: name, email, auths)
+* Associar: POST /api/v1/lists (document\_key, signer\_key)
+* Remover: DELETE /api/v1/lists/\:key
+
+---
+
+### Envelopes
+
+* Criar: POST /api/v1/envelopes
+* Adicionar documentos: POST /api/v1/envelopes/\:key/add\_documents
+* Adicionar signatários: POST /api/v1/envelopes/\:key/add\_signers
+* Ativar: PATCH /api/v1/envelopes/\:key/activate
+
+---
+
+### Notificações
+
+* Enviar: POST /api/v1/notifications (params: list\_key)
+* Tipos: email, whatsapp
+
+---
+
+### Webhooks
+
+* Cadastrar: POST /api/v1/webhooks
+* Listar: GET /api/v1/webhooks
+* Remover: DELETE /api/v1/webhooks/\:key
+
+---
+
+### Eventos (Webhooks)
+
+* Evento: document.upload
+* Evento: document.sign
+* Evento: document.cancel
+* Evento: document.deadline
+* Evento: signer.add/remove/sign/refusal
+* Evento: envelope.active
+* Evento: whatsapp.attempts.exceeded
+
+---
+
+### Requisitos
+
+* Rubrica: POST /api/v1/documents/\:key/requirements/rubric
+* Qualificação: POST /api/v1/documents/\:key/requirements/qualification
+* Autenticação: sms, whatsapp, certificado
+
+---
+
+### Aceite via WhatsApp
+
+* Criar: POST /api/v1/accepts/whatsapp
+* Cancelar: PATCH /api/v1/accepts/whatsapp/\:key/cancel
+* Visualizar todos: GET /api/v1/accepts/whatsapp
+* Visualizar único: GET /api/v1/accepts/whatsapp/\:key
+
+---
+
+### Autenticação e Segurança
+
+* Bearer Token em Header: Authorization
+* TLS 1.2+, Ciphers fortes
+
+---
+
+### Limites de Requisição
+
+* 10 req/segundo
+* Headers de controle: X-RateLimit-\*
+
+---
+
+### Mensagens de Erro
+
+* 400: Bad Request
+* 401: Unauthorized
+* 404: Not Found
+* 422: Unprocessable Entity (validação)
+* 429: Rate Limit Exceeded
+* 500: Internal Error

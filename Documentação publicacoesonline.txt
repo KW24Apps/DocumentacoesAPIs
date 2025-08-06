@@ -1,0 +1,127 @@
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-1._Publicações_não_capturadas-Publicações_não_Capturadas
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-2._Cadastro-Cadastro
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-3._Consumo-Consulta_Distribuições
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-3._Consumo-Consulta_Publicações
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-4._Processamento-Processar_Publicações_e_Distribuições
+https://www.publicacoesonline.com.br/apidoc_ws/doc/#api-5._Histórico
+
+
+# RESUMO TÉCNICO – API “PUBLICAÇÕES ONLINE”  v0.1.0
+> Todas as informações foram extraídas do PDF de documentação (21 págs). :contentReference[oaicite:2]{index=2}  
+
+---
+
+## 1. **Publicações não capturadas**
+* **Endpoint** : `GET /index_data_publicacao_nao_lida.php`
+* **Objetivo** : listar **publicações/distribuições não lidas ou não processadas** do cliente.  
+* **Parâmetros**  
+  | Nome | Tipo | Obrig. | Valores / Observações |
+  |------|------|--------|-----------------------|
+  | `hashCliente` | string | **S** | Token único fornecido pela Publicações Online |
+  | `status` | string | N | `0` = não lidas • `1` = não processadas |
+  | `processoEletronico` | string | N | `N` = somente físicos • `S` = somente eletrônicos • `T` ( padrão ) = todos |
+  | `filtrarDataDisp` | string | N | `S` = filtra por **dataDisponibilizacao** igual ao parâmetro `data`; se omitido usa data de cadastro |
+  | `data` | date | N | Referência para `filtrarDataDisp` |
+* **Resposta** : array JSON/XML com campos padrão de publicação + `status`.  
+
+---
+
+## 2. **Cadastro** ― *Cadastrar/editar idExterno ou núm. de processo*
+* **Endpoint** : `GET /index_pe_pasta_processo.php`
+* **Parâmetros**
+  | Nome | Tipo | Obrig. | Detalhes |
+  |------|------|--------|----------|
+  | `hashCliente` | string | **S** | |
+  | `action` | string | **S** | `inserir` • `update` • `deletar` |
+  | `idSistema` | int | N | Identificador do sistema cliente |
+  | `numeroProcesso` | string | N | CNJ ou numeração antiga |
+  | `pasta` | string | N | **idExterno** (chave do processo no cliente) |
+* **Resposta** : JSON simples ⇒ `{ action: "inserir", mensagem: "Inserido em ..." }`, etc.  
+
+---
+
+## 3. **Consumo**
+### 3.1 Consultar **Distribuições**
+* **Endpoint** : `GET /index_dist.php`
+* **Parâmetros** (os principais)
+  | Nome | Tipo | Obrig. | Observações |
+  |------|------|--------|-------------|
+  | `hashCliente` | string | **S** | |
+  | `data` | date | **S** | Data base da consulta |
+  | `processadas` | string | N | `N`, `S`, `L`, `T` (vide regras de status) |
+  | `retorno` | string | N | `JSON` (padrão) ou `XML` |
+  | `encoding` | string | N | Ex.: `iso-8859-1` (padrão) |
+  | `idExterno` | string | N | Lista de IDs separados por vírgula |
+* **Resposta** : lista de distribuições (exemplo de payload na pág. 5).  
+
+### 3.2 Consultar **Publicações**
+* **Endpoint** : `GET /index_pubs.php`
+* **Parâmetros adicionais** (além dos acima):
+  | Nome | Tipo | Observações |
+  |------|------|-------------|
+  | `dataInicial` / `dataFinal` | date | intervalo de pesquisa |
+  | `dataReferencia` | string | exibe somente registros criados há ≥ 3 dias |
+  | `limite` | int | máx. de registros retornados |
+  | Filtros extras | strings | `quebraLinha`, `filtroCaracteres`, etc. para sanitização/controle de tamanho |
+
+---
+
+## 4. **Processamento** ― *Marcar como processadas*
+* **Endpoint** : `GET /index_pj_processadas.php`
+* **Objetivo** : sinalizar que as publicações já foram processadas pelo cliente, impedindo reenvio.
+* **Parâmetros**
+  | Nome | Tipo | Obrig. | Observações |
+  |------|------|--------|-------------|
+  | `hashCliente` | string | **S** | |
+  | `listaIdExternos` | string | N | IDs separados por vírgula; se omitido, processa **todas** as não processadas |
+* **Resposta** : `{ "status":"1", "mensagem":"Todos os registros processados com sucesso" }`  
+
+---
+
+## 5. **Histórico**
+* **Endpoint** : `GET /pj_historico.php`
+* **Uso** : consultar **publicações/distribuições já disponibilizadas** ao cliente.
+* **Parâmetros chave**
+  | Nome | Tipo | Observações |
+  |------|------|-------------|
+  | `hashCliente` | string | **S** |
+  | `idPublicacao` / `idDistribuicao` | int | busca direta por ID |
+  | `numeroProcessoCNJ` | string | busca por número CNJ |
+  | `processoEletronico` | string | `S`/`N`/`T` |
+  | `dataInicial` / `dataFinal` | date | intervalo |
+  | `limit` | int | limite de registros |
+  | `destermo` | string | envia PDF ao e‑mail do destinatário cadastrado |
+* **Resposta** : lista completa dos registros + codificação escolhida.
+
+---
+
+## 6. **Tratamento de Erros** (tabela pág. 21)
+| Código | Mensagem resumo |
+|--------|-----------------|
+| `100` | “Erro: Captcha inválido / ver. conta e suporte” |
+| `101` | Falha na autenticação (`hashCliente`) |
+| `102` | Requisição incorreta (método/rota) |
+| `110` | “Erro: tipo de descrição não correspondente” |
+| `200` | Nenhum registro encontrado |
+| `300` | Já processado anteriormente |
+| `500` | Erro interno / indisponibilidade do serviço |
+| *…*  | (lista completa no PDF) |
+
+---
+
+### Observações gerais
+* **Disponibilidade** : 24 × 7 exceto domingo (tabela de horários, pág. 1).  
+* **Fluxo sugerido** (pág. 1):  
+  1. **Consultar não capturadas** →  
+  2. **Consultar / baixar detalhes** →  
+  3. **Processar** →  
+  4. **Histórico** para auditoria.  
+* Todos os endpoints aceitam `GET` com parâmetros **query‑string**.  
+* Retornos podem ser **JSON** (UTF‑8/ISO‑8859‑1) ou **XML**, configuráveis por parâmetro `retorno` e `encoding`.  
+* Campos de saída incluem metadados completos do processo: tribunal, classe, partes, conteúdo, links para PDF, etc. (ver páginas 8‑15).  
+
+```txt
+Com este resumo + as rotas/params acima, um modelo GPT já consegue:
+- Montar clientes (curl, axios, fetch) para cada endpoint.
+- Construir lógica de sincronização local.
+- Implementar retries / tratamento de erros pelos códigos padrão.

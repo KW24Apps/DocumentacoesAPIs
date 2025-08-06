@@ -1,0 +1,127 @@
+# PROJETO BANCO DE DADOS KW24 - Sincronização Bitrix24
+
+## Objetivo
+Sistema autônomo que sincroniza dados do Bitrix24 para banco local 3x/dia, sem webhooks.
+
+## STATUS ATUAL DO PROJETO
+
+### ✅ CONCLUÍDO:
+1. **Consulta de Dados** - `consultardados()` funcionando
+2. **Tabela Dicionário** - `tabeladinamica()` criando/atualizando com 771 campos
+3. **Configuração Centralizada** - Arquivo config consolidado
+4. **DAO Genérico** - Métodos reutilizáveis para dicionário
+
+### 📝 PRÓXIMOS PASSOS:
+1. **Criar Layout das Tabelas** - Usar dicionário para criar colunas
+2. **Inserir Dados** - Popular tabelas com dados brutos
+3. **Testes Individuais** - Validar cada etapa antes de seguir
+
+---
+
+## FLUXO DE EXECUÇÃO - FUNÇÃO executar()
+
+### ✅ PASSO 1: Consultar Dados (CONCLUÍDO)
+**Função:** `consultardados()`
+**O que faz:** Busca todos os dados do Bitrix24
+**Retorna:**
+- `cardsKW24` - Dados dos cards da SPA (1054)
+- `camposSpaKW24` - Metadados dos campos 
+- `etapasSpaKW24` - Etapas da SPA
+- `camposTask` - Metadados tarefas
+- `todasTarefas` - Dados das tarefas (grupo 37)
+- `empresasVinculadas` - Empresas dos cards
+- `camposCompanies` - Metadados empresas
+- `cardsColaboradores` - Colaboradores (190, categoria 157)
+- `camposSpaColaboradores` - Metadados colaboradores
+
+### ✅ PASSO 2: Tabela Dicionário (CONCLUÍDO)
+**Função:** `tabeladinamica()`
+**O que faz:** Cria/atualiza mapeamento UF_field → Nome Amigável
+**Estrutura:** `bitrix_field_mapping` (uf_field | friendly_name | entity_type | field_type)
+**Resultado:** 771 campos mapeados (148 Cards + 69 Tasks + 554 Companies)
+**Lógica:**
+- Se não existe: cria tabela do zero
+- Se existe: compara, remove obsoletos, adiciona novos
+- **REGRA:** Nome amigável NUNCA muda (estabilidade Power BI)
+
+### 📝 PASSO 3: Criar Tabelas Padrão (PRÓXIMO)
+**Função:** `criarTabelasPadrao()` - UMA função única e simples
+
+**O que faz:**
+1. Consulta tabela dicionário `bitrix_field_mapping`
+2. Para entity_type = 'cards' → cria tabela `kw24_cards` usando friendly_name como colunas
+3. Para entity_type = 'companies' → cria tabela `kw24_clientes` usando friendly_name como colunas  
+4. Para entity_type = 'tasks' → cria tabela `kw24_tarefas` usando friendly_name como colunas
+
+**Lógica no executar():**
+```php
+// PASSO 3: Criar tabelas (apenas se não existirem)
+if (!$this->tabelasJaExistem()) {
+    $this->criarTabelasPadrao();
+}
+// Se já existem → fazer nada por enquanto (repensaremos depois)
+```
+
+**Processo simples:**
+- SELECT * FROM bitrix_field_mapping WHERE entity_type = 'cards'
+- Para cada friendly_name → CREATE TABLE kw24_cards com colunas
+- Repetir para companies e tasks
+- **Uma função, uma tarefa, bem direto**
+
+### 📝 PASSO 4: Inserir Dados (DEPOIS)
+**Funções:**
+- `inserirDadosTabelas()` - Orquestrador  
+- `inserirDadosTabela($entityType, $dados)` - Genérica
+
+**O que vai fazer:**
+- Para cada registro: UF_field → consulta dicionário → nome coluna
+- Insert/Update dados brutos nas tabelas criadas
+- **Lógica:** UF no dado → nome amigável na coluna
+
+### 💡 FUNÇÃO AUXILIAR: montararray()
+**Status:** Mantida para uso futuro
+**Finalidade:** Retornar dados formatados para APIs (não para tabelas)
+**Diferença:** Tabelas = dados brutos / montararray = dados processados
+
+---
+
+## METODOLOGIA DE DESENVOLVIMENTO
+
+### 🎯 ABORDAGEM PONTO A PONTO:
+1. ✅ Implementar uma função
+2. ✅ Testar isoladamente  
+3. ✅ Validar resultado
+4. ✅ Só então partir para próxima
+
+### 🔧 PRÓXIMO TESTE:
+- ✅ **IMPLEMENTADO:** `criarTabelasPadrao()` + `tabelasJaExistem()`
+- ✅ **IMPLEMENTADO:** Métodos DAO: `tabelaExiste()`, `consultarCamposPorEntidade()`, `criarTabelaComColunas()`
+- 🧪 **TESTE:** Executar sincronização e validar criação das tabelas `kw24_cards`, `kw24_clientes`, `kw24_tarefas`
+- 📋 **VALIDAR:** Estrutura das tabelas com colunas usando nomes amigáveis
+
+---
+
+## CONFIGURAÇÃO ATUAL
+
+**Entities:** cards (1054), companies (4), tasks (grupo 37), colaboradores (190, cat 157)
+**Webhook:** https://gnapp.bitrix24.com.br/rest/21/g321gnxcrxnx4ing/
+**DB:** kw24_sync_bitrix (local) / kw24co49_kw24_sync_bitrix (prod)
+
+### PASSO 5: Criar/Atualizar Tabela TAREFAS  
+**O que é:** Tabela com tarefas vinculadas aos cards da SPA usando nomes amigáveis
+**Processo:** Usar dicionário para traduzir UFs → colunas com nomes legíveis + sincronizar dados
+
+### PASSO 6: Criar/Atualizar Tabela CLIENTES (Empresas)
+**O que é:** Tabela com empresas vinculadas aos cards usando nomes amigáveis  
+**Processo:** Usar dicionário para traduzir UFs → colunas com nomes legíveis + sincronizar dados
+
+**NOTA IMPORTANTE - TABELA COLABORADORES:** 
+- **Filtro obrigatório:** Trazer APENAS colaboradores da categoria/funil 157 (RH financeiro específico)
+- **Motivo:** Existem vários funis de RH com muitos cards - seria loucura trazer tudo
+- **Implementação no PASSO 1:** `$cardsColaboradores = BitrixHelper::listarItensCrm(190, ['categoryId' => 157])`
+- **Análise posterior:** Dados podem ser integrados na tabela CLIENTES (qtd colaboradores por departamento/empresa)
+
+
+
+
+
