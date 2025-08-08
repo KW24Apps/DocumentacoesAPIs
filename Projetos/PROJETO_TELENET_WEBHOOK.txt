@@ -1,0 +1,270 @@
+# PROJETO TELENET - INTEGRAÇÃO WEBHOOK
+
+## 📋 RESUMO EXECUTIVO
+
+Sistema de integração via webhook para recebimento de dados da Telenet e envio automático para Bitrix24. 
+A Telenet enviará dados de solicitações via POST HTTP, receberá confirmação imediata e os dados serão processados automaticamente no CRM.
+
+---
+
+## 📢 PARA A EQUIPE TELENET
+
+**Prezada equipe técnica da Telenet,**
+
+Este documento contém as **especificações técnicas completas** para a integração entre nossos sistemas via webhook HTTP.
+
+### **🎯 O QUE PRECISAMOS DA TELENET:**
+
+1. **Implementar envio de dados via HTTP POST** para o endpoint que disponibilizaremos
+2. **Enviar dados no formato JSON** conforme estrutura detalhada neste documento
+3. **Tratar as respostas** de sucesso/erro que retornaremos
+4. **Realizar testes** de integração em ambiente de homologação
+
+### **🔧 O QUE DISPONIBILIZAREMOS:**
+
+- ✅ **Endpoint webhook** configurado e funcional
+- ✅ **Documentação técnica completa** (este documento)
+- ✅ **Ambiente de testes** para validação
+- ✅ **Suporte técnico** durante a implementação
+- ✅ **Logs detalhados** para troubleshooting
+
+### **📋 PRÓXIMOS PASSOS:**
+
+1. **Telenet:** Revisar especificações técnicas deste documento
+2. **Telenet:** Confirmar viabilidade de implementação
+3. **KW24:** Desenvolver e configurar o endpoint webhook
+4. **Ambos:** Realizar testes de integração
+5. **Ambos:** Deploy em produção
+
+**Dúvidas técnicas?** Entre em contato conosco para esclarecimentos.
+
+---
+
+## 🔄 FLUXO DE FUNCIONAMENTO
+
+### **PASSO 1: Telenet envia dados**
+```
+Telenet Sistema → POST HTTP → triocard.kw24.com.br/telenet
+```
+
+### **PASSO 2: Processamento automático**
+```
+1. Recebimento dos dados
+2. Validação da estrutura JSON
+3. Resposta imediata para Telenet (sucesso/erro)
+4. Processamento e envio para Bitrix24
+5. Log de toda operação
+```
+
+### **PASSO 3: Integração Bitrix24**
+```
+Dados tratados → Bitrix24 CRM → Atualização automática
+```
+
+---
+
+## 📡 ESPECIFICAÇÕES TÉCNICAS
+
+### **ENDPOINT DE RECEBIMENTO:**
+- **URL:** `https://triocard.kw24.com.br/telenet`
+- **Método:** POST
+- **Content-Type:** application/json
+- **Timeout:** 30 segundos máximo
+
+### **ESTRUTURA JSON ESPERADA:**
+```json
+{
+    "nome_arquivo": "documento_001.pdf",
+    "protocolo": "TEL2025080001",
+    "data_solicitacao": "2025-08-06 14:30:00",
+    "data_retorno_solicitacao": "2025-08-06 16:45:00",
+    "mensagem": "Solicitação processada com sucesso",
+    "cliente": "Empresa XYZ Ltda",
+    "cnpj": "12.345.678/0001-90"
+}
+```
+
+### **RESPOSTA PADRÃO:**
+**Sucesso:**
+```json
+{
+    "success": true,
+    "message": "Dados recebidos e processados com sucesso",
+    "protocolo": "TEL2025080001",
+    "timestamp": "2025-08-06 16:45:15"
+}
+```
+
+**Erro:**
+```json
+{
+    "success": false,
+    "error": "Descrição do erro",
+    "timestamp": "2025-08-06 16:45:15"
+}
+```
+
+---
+
+## 🛡️ VALIDAÇÕES E SEGURANÇA
+
+### **Validações obrigatórias:**
+- ✅ Protocolo não pode estar vazio
+- ✅ CNPJ deve ter formato válido
+- ✅ Datas devem estar no formato Y-m-d H:i:s
+- ✅ Cliente não pode estar vazio
+- ✅ JSON deve ser válido
+
+### **Segurança:**
+- 🔒 Logs completos de todas as operações
+- 🔒 Validação de origem (IP whitelist se necessário)
+- 🔒 Rate limiting (máximo 100 requests/minuto)
+- 🔒 Sanitização de dados de entrada
+
+---
+
+## 📊 TRATAMENTO DE DADOS PARA BITRIX24
+
+### **Mapeamento de campos:**
+| Campo Telenet | Campo Bitrix24 | Tipo |
+|---------------|----------------|------|
+| protocolo | uf_protocolo_telenet | string |
+| nome_arquivo | uf_arquivo_telenet | string |
+| data_solicitacao | uf_data_solicitacao | datetime |
+| data_retorno_solicitacao | uf_data_retorno | datetime |
+| mensagem | uf_mensagem_telenet | text |
+| cliente | title ou companyId | string |
+| cnpj | uf_cnpj_cliente | string |
+
+### **Ações automáticas no Bitrix24:**
+1. **Buscar deal existente** pelo protocolo
+2. **Criar novo deal** se não existir
+3. **Atualizar campos** conforme mapeamento
+4. **Adicionar comentário** com detalhes da operação
+5. **Atualizar estágio** do deal (se configurado)
+
+---
+
+## 📋 CENÁRIOS DE USO
+
+### **Cenário 1: Primeira solicitação**
+```
+Telenet → Webhook → Criar novo deal no Bitrix24 → Resposta de sucesso
+```
+
+### **Cenário 2: Atualização de solicitação existente**
+```
+Telenet → Webhook → Atualizar deal existente → Resposta de sucesso
+```
+
+### **Cenário 3: Erro de dados**
+```
+Telenet → Webhook → Validação falha → Resposta de erro com detalhes
+```
+
+---
+
+## 🔧 IMPLEMENTAÇÃO LADO TELENET
+
+### **Requisitos técnicos:**
+- **Linguagem:** Qualquer (PHP, Python, C#, Java, etc.)
+- **Biblioteca HTTP:** cURL, HttpClient, requests, etc.
+- **Formato:** JSON obrigatório
+- **Headers obrigatórios:**
+  ```
+  Content-Type: application/json
+  User-Agent: Telenet-System/1.0
+  ```
+
+### **Exemplo de implementação (PHP):**
+```php
+$dados = [
+    'nome_arquivo' => 'documento_001.pdf',
+    'protocolo' => 'TEL2025080001',
+    'data_solicitacao' => '2025-08-06 14:30:00',
+    'data_retorno_solicitacao' => '2025-08-06 16:45:00',
+    'mensagem' => 'Solicitação processada com sucesso',
+    'cliente' => 'Empresa XYZ Ltda',
+    'cnpj' => '12.345.678/0001-90'
+];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://triocard.kw24.com.br/telenet');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    'Content-Type: application/json',
+    'User-Agent: Telenet-System/1.0'
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+curl_close($ch);
+
+// Verificar resposta
+if ($httpCode === 200) {
+    $result = json_decode($response, true);
+    if ($result['success']) {
+        echo "Dados enviados com sucesso!";
+    } else {
+        echo "Erro: " . $result['error'];
+    }
+} else {
+    echo "Erro de conexão. HTTP Code: " . $httpCode;
+}
+```
+
+---
+
+## 📈 MONITORAMENTO E LOGS
+
+### **Logs automáticos:**
+- 📝 Todas as requisições recebidas
+- 📝 Dados processados e enviados ao Bitrix24
+- 📝 Erros e exceções detalhadas
+- 📝 Performance e tempo de resposta
+
+### **Dashboard de monitoramento:**
+- 📊 Total de requisições por dia
+- 📊 Taxa de sucesso/erro
+- 📊 Tempo médio de processamento
+- 📊 Últimas operações realizadas
+
+---
+
+## 🚀 BENEFÍCIOS DA INTEGRAÇÃO
+
+### **Para a Telenet:**
+- ✅ Resposta imediata de confirmação
+- ✅ Interface simples via HTTP POST
+- ✅ Logs completos de operações
+- ✅ Tratamento automático de erros
+
+### **Para o KW24:**
+- ✅ Integração automática com Bitrix24
+- ✅ Dados estruturados e organizados
+- ✅ Histórico completo de operações
+- ✅ Redução de trabalho manual
+
+---
+
+## 📞 CONTATOS E SUPORTE
+
+**Equipe técnica KW24:**
+- Endpoint de teste: `https://triocard.kw24.com.br/telenet/test`
+- Documentação: Este documento
+- Suporte: Equipe de desenvolvimento KW24
+
+**Próximos passos:**
+1. Aprovação desta especificação
+2. Desenvolvimento do endpoint (KW24)
+3. Testes de integração
+4. Implementação no ambiente de produção
+
+---
+
+**Documento criado em:** 06/08/2025  
+**Versão:** 1.0  
+**Status:** Aguardando aprovação

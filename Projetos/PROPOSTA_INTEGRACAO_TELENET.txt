@@ -1,0 +1,66 @@
+# PROPOSTA DE INTEGRAÇÃO - TELENET x KW24
+
+## 📧 PARA: Equipe Telenet
+## 📧 DE: KW24 Sistemas
+## 📅 DATA: 06/08/2025
+
+---
+
+## 💡 PROPOSTA DE PROJETO
+
+**Prezada equipe Telenet,**
+
+Gostaríamos de propor uma **integração automatizada** entre nossos sistemas para otimizar o fluxo de informações e eliminar processos manuais.
+
+### **🎯 OBJETIVO:**
+Criar uma ponte direta entre o sistema Telenet e nosso CRM (Bitrix24), permitindo que vocês enviem dados de solicitações automaticamente para nosso sistema.
+
+---
+
+## 🔄 COMO FUNCIONARIA
+
+### **📤 LADO TELENET (Vocês):**
+- Quando uma solicitação for processada no sistema de vocês
+- Enviar dados via **HTTP POST** para nosso endpoint
+- Receber confirmação imediata de recebimento
+
+### **📥 LADO KW24 (Nós):**
+- Receber os dados automaticamente
+- Processar e integrar no Bitrix24
+- Enviar resposta de confirmação
+
+---
+
+## 🌐 ESPECIFICAÇÕES TÉCNICAS INICIAIS
+
+### **ENDPOINT PROPOSTO:**
+```
+URL: https://triocard.kw24.com.br/telenet
+Método: POST
+Formato: JSON
+```
+
+### **ESTRUTURA DE DADOS SUGERIDA:**
+```json
+{
+    "nome_arquivo": "documento_exemplo.pdf",
+    "protocolo": "TEL2025080001",
+    "data_solicitacao": "2025-08-06 14:30:00",
+    "data_retorno_solicitacao": "2025-08-06 16:45:00",
+    "mensagem": "Solicitação processada com sucesso",
+    "cliente": "Nome da Empresa",
+    "cnpj": "12.345.678/0001-90"
+}
+```
+
+### **RESPOSTA QUE RECEBERIAM:**
+```json
+{
+    "success": true,
+    "message": "Dados recebidos com sucesso",
+    "protocolo": "TEL2025080001"
+}
+```
+**Aguardamos seu retorno para darmos continuidade!** 🚀
+
+*Documento gerado pela equipe KW24 como proposta inicial de integração.*
