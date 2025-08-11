@@ -3,8 +3,8 @@ php -S localhost:8000
 
 //Comit
 git add .
->> git commit -m "atualizar Gabriel"
->> git push
+git commit -m "Atualização do Sistema"
+git push
 
 //Acessar Servidor SSH
 ssh kw24co49@apis.kw24.com.br
