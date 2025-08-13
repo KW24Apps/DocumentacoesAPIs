@@ -1,0 +1,422 @@
+# 📋 **API JALLCARD - DOCUMENTAÇÃO TÉCNICA**
+
+> **Documentação completa da API JallCard Pyxis para produção de cartões**  
+> **Versão:** 3.0.0  
+> **Tecnologia:** OpenAPI 3.0.3 (Swagger)  
+> **Framework:** Quarkus 3.9.4  
+
+---
+
+## 🌐 **AMBIENTES DISPONÍVEIS**
+
+| **Ambiente** | **URL** | **Porta** | **Documentação** |
+|--------------|---------|-----------|------------------|
+| **Produção** | `https://api-sp.jallcard.com.br` | `8143` | `https://api-sp.jallcard.com.br:8143/doc/` |
+| **Homologação** | `https://api-hom.jallcard.com.br` | `8144` | `https://api-hom.jallcard.com.br:8144/doc/` |
+
+## 🔐 **AUTENTICAÇÃO**
+
+- **Tipo:** Basic Auth
+- **Esquema:** HTTP Basic Authentication
+- **Headers:** `Authorization: Basic [base64(usuario:senha)]`
+
+---
+
+## 📊 **ESTRUTURA DA API**
+
+### **📁 CATEGORIAS DE ENDPOINTS**
+
+1. **🗃️ Arquivos** - Gerenciamento de arquivos processados
+2. **📄 Documentos** - Consulta e gerenciamento de documentos
+3. **📦 Estoque** - Controle de estoque de insumos
+4. **🚚 Expedição** - Gestão de expedições
+5. **📋 Lotes de Expedição** - Controle de lotes
+6. **⚙️ Ordens de Produção** - Gerenciamento de ordens
+7. **📋 Pedidos de Produção** - Controle de pedidos
+
+---
+
+## 🔗 **ENDPOINTS DISPONÍVEIS**
+
+### **🗃️ ARQUIVOS**
+
+#### `GET /api/arquivos/processados`
+**Descrição:** Lista os arquivos processados  
+**Período:** Últimos 7 dias (padrão)
+
+**Parâmetros:**
+- `de` (query, opcional) - Data inicial (LocalDateTime)
+- `para` (query, opcional) - Data final (LocalDateTime)
+
+**Respostas:**
+- `200` - Lista de arquivos processados
+- `400` - Período maior que 7 dias
+- `401` - Não autorizado
+- `403` - Não permitido
+
+---
+
+### **📄 DOCUMENTOS**
+
+#### `GET /api/documentos`
+**Descrição:** Pesquisa documentos  
+**Regra:** Apenas um parâmetro entre OP, código de pesquisa ou lote de expedição
+
+**Parâmetros:**
+- `codigoPesquisa` (query, opcional) - Código para pesquisa
+- `incluirItens` (query, opcional) - Incluir itens do documento (boolean)
+- `loteExpedicao` (query, opcional) - Código do lote de expedição
+- `op` (query, opcional) - Ordem de produção
+
+#### `GET /api/documentos/{id}`
+**Descrição:** Consulta documento específico por ID
+
+**Parâmetros:**
+- `id` (path, obrigatório) - ID do documento
+- `incluirItens` (query, opcional) - Incluir itens (boolean)
+
+---
+
+### **📦 ESTOQUE**
+
+#### `GET /api/estoque`
+**Descrição:** Consulta estoque atual de insumos
+
+**Parâmetros:**
+- `codigoInsumo` (query, opcional) - Código específico do insumo
+
+---
+
+### **🚚 EXPEDIÇÕES**
+
+#### `GET /api/expedicoes`
+**Descrição:** Lista expedições
+
+#### `GET /api/expedicoes/{codigo}`
+**Descrição:** Consulta expedição específica
+
+**Parâmetros:**
+- `codigo` (path, obrigatório) - Código da expedição
+
+---
+
+### **📋 LOTES DE EXPEDIÇÃO**
+
+#### `GET /api/lotesExpedicao`
+**Descrição:** Lista lotes de expedição
+
+#### `GET /api/lotesExpedicao/{codigo}`
+**Descrição:** Consulta lote específico
+
+**Parâmetros:**
+- `codigo` (path, obrigatório) - Código do lote
+
+---
+
+### **⚙️ ORDENS DE PRODUÇÃO**
+
+#### `GET /api/ordensProducao`
+**Descrição:** Lista ordens de produção
+
+#### `GET /api/ordensProducao/gravadas`
+**Descrição:** Lista ordens de produção já gravadas
+
+#### `GET /api/ordensProducao/{codigo}`
+**Descrição:** Consulta ordem específica
+
+**Parâmetros:**
+- `codigo` (path, obrigatório) - Código da ordem
+
+---
+
+### **📋 PEDIDOS DE PRODUÇÃO**
+
+#### `GET /api/pedidosProducao`
+**Descrição:** Lista pedidos de produção
+
+#### `GET /api/pedidosProducao/{id}`
+**Descrição:** Consulta pedido específico
+
+**Parâmetros:**
+- `id` (path, obrigatório) - ID do pedido
+
+---
+
+## 📋 **SCHEMAS/MODELOS DE DADOS**
+
+### **📄 Documento**
+```json
+{
+  "codigo": "6504 15XX XXXX 2276",
+  "destinatario": {
+    // Informações do destinatário
+  },
+  "atributos": {
+    // Atributos customizados (objeto chave-valor)
+  },
+  "loteExpedicao": {
+    // Informações do lote (se aplicável)
+  },
+  "expedicao": {
+    // Informações da expedição (se aplicável)
+  },
+  "itens": [
+    // Lista de itens do documento
+  ]
+}
+```
+
+### **📦 Estoque**
+```json
+{
+  "insumo": {
+    "codigo": "10XXX0001",
+    "codigoExterno": "CAR_CRED_256",
+    "descricao": "Cartão de crédito 256",
+    "tipo": "Cartão com Chip"
+  },
+  "estoqueAtual": 9987,
+  "rejeitosArmazenados": 23
+}
+```
+
+### **🚚 Expedição**
+```json
+{
+  "codigo": "71093398",
+  "entregadora": "FLASH",
+  "data": "2023-11-14T09:48:28.109",
+  "lotes": [
+    // Lista de lotes da expedição
+  ]
+}
+```
+
+### **📋 Lote de Expedição**
+```json
+{
+  "codigo": "04089043",
+  "contratoEntregadora": "FLASH",
+  "pedidoProducao": 10000180826,
+  "data": "2023-11-14T09:48:28.109",
+  "expedicao": "71093398",
+  "lacre": "746821598379"
+}
+```
+
+### **⚙️ Ordem de Produção**
+```json
+{
+  "codigo": "XXX2400001",
+  "quantidade": 254,
+  "lote": "104367",
+  "produtos": [
+    // Lista de produtos
+  ],
+  "producao": {
+    "gravacao": "2023-11-14T09:48:28.109",
+    "preExpedicao": "2023-11-15T10:57:02.155",
+    "expedicao": "2023-11-15T12:32:14.854"
+  },
+  "status": "ABERTA" // ABERTA, FINALIZADA, CANCELADA, REJEITADA
+}
+```
+
+### **📋 Pedido de Produção**
+```json
+{
+  "id": 10000180826,
+  "arquivos": [
+    // Lista de arquivos que geraram o pedido
+  ],
+  "ops": [
+    // Lista de códigos das ordens vinculadas
+  ],
+  "data": "2023-11-14T09:48:28.109"
+}
+```
+
+---
+
+## 🔄 **CÓDIGOS DE RETORNO**
+
+| **Código** | **Descrição** | **Contexto** |
+|------------|---------------|--------------|
+| `200` | Sucesso | Dados retornados com sucesso |
+| `400` | Bad Request | Parâmetros inválidos ou período muito longo |
+| `401` | Unauthorized | Credenciais inválidas ou ausentes |
+| `403` | Forbidden | Acesso negado ao recurso |
+| `404` | Not Found | Recurso não encontrado |
+
+---
+
+## 🎯 **CASOS DE USO COMUNS**
+
+### **1. Consultar Documentos por Lote**
+```bash
+GET /api/documentos?loteExpedicao=04089043&incluirItens=true
+```
+
+### **2. Verificar Estoque de Insumo**
+```bash
+GET /api/estoque?codigoInsumo=10XXX0001
+```
+
+### **3. Acompanhar Ordem de Produção**
+```bash
+GET /api/ordensProducao/XXX2400001
+```
+
+### **4. Listar Arquivos Processados Hoje**
+```bash
+GET /api/arquivos/processados?de=2024-08-12T00:00:00&para=2024-08-12T23:59:59
+```
+
+---
+
+## ⚠️ **LIMITAÇÕES E RESTRIÇÕES**
+
+1. **Período de Consulta:** Máximo 7 dias para arquivos processados
+2. **Autenticação:** Obrigatória para todos os endpoints
+3. **Rate Limiting:** Não especificado na documentação
+4. **Parâmetros Exclusivos:** Alguns endpoints aceitam apenas um parâmetro por vez
+
+---
+
+## 🛠️ **INTEGRAÇÃO RECOMENDADA**
+
+### **Headers Padrão:**
+```http
+Authorization: Basic [base64_credentials]
+Content-Type: application/json
+Accept: application/json
+```
+
+### **Tratamento de Erros:**
+```php
+// Exemplo de implementação
+function consultarJallCardAPI($endpoint, $params = []) {
+    $url = "https://api-sp.jallcard.com.br:8143" . $endpoint;
+    
+    // Adicionar parâmetros à URL
+    if (!empty($params)) {
+        $url .= '?' . http_build_query($params);
+    }
+    
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            'Authorization: Basic ' . base64_encode($usuario . ':' . $senha),
+            'Content-Type: application/json'
+        ],
+        CURLOPT_SSL_VERIFYPEER => false, // Para ambiente de teste
+        CURLOPT_TIMEOUT => 30
+    ]);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+    if ($httpCode === 200) {
+        return json_decode($response, true);
+    } else {
+        throw new Exception("Erro na API JallCard: HTTP $httpCode");
+    }
+}
+```
+
+---
+
+## � **INTEGRAÇÃO TRIOCARD - FLUXO COMPLETO**
+
+### **📊 FLUXO DE INTEGRAÇÃO PROPOSTO:**
+
+```
+TELENET WEBHOOK → JALLCARD CONSULTA → FLASH ENTREGA
+     ↓                ↓                   ↓
+   Arquivo         Documentos         Rastreamento
+   Gerado          Produção           Entrega Final
+```
+
+### **🔗 PONTOS DE CONEXÃO:**
+
+#### **1. TELENET → JALLCARD**
+**Trigger:** `mensagem = "Arquivo gerado"`  
+**Ação:** Consultar `/api/pedidosProducao` para encontrar pedido relacionado
+
+**Dados Telenet:**
+```json
+{
+  "protocolo": "123456",
+  "nome_arquivo": "arquivo_cartoes.txt",
+  "cliente": "TRIO CARD",
+  "mensagem": "Arquivo gerado"
+}
+```
+
+**Consulta JallCard:**
+```bash
+GET /api/pedidosProducao
+GET /api/ordensProducao/{codigo}
+```
+
+#### **2. JALLCARD → FLASH**
+**Trigger:** `status = "FINALIZADA"` na Ordem de Produção  
+**Ação:** Extrair dados de expedição para consulta Flash
+
+**Resposta JallCard:**
+```json
+{
+  "ordem": {
+    "codigo": "XXX2400001",
+    "status": "FINALIZADA",
+    "producao": {
+      "expedicao": "2023-11-15T12:32:14.854"
+    }
+  },
+  "expedicao": {
+    "codigo": "71093398",
+    "entregadora": "FLASH"
+  }
+}
+```
+
+**Dados para Flash:**
+```json
+{
+  "clienteId": 4411,
+  "cttId": [71093398],
+  "numEncCli": ["XXX2400001"]
+}
+```
+
+### **🎯 ENDPOINTS CRÍTICOS PARA INTEGRAÇÃO:**
+
+1. **`GET /api/pedidosProducao`** - Localizar pedido por arquivo
+2. **`GET /api/ordensProducao/{codigo}`** - Verificar status de produção
+3. **`GET /api/expedicoes/{codigo}`** - Obter dados para Flash
+4. **`GET /api/documentos?op={codigo}`** - Documentos por ordem
+
+### **⚙️ CAMPOS BITRIX SUGERIDOS:**
+
+- `uf_status_jallcard` - Status da produção
+- `uf_ordem_producao` - Código da ordem
+- `uf_codigo_expedicao` - Código para Flash
+- `uf_status_flash` - Status da entrega
+
+---
+
+## �📚 **PRÓXIMOS PASSOS**
+
+1. **Configurar Credenciais** de acesso nos ambientes
+2. **Implementar Helper** específico para JallCard
+3. **Criar Testes** para validar integração
+4. **Documentar Casos de Uso** específicos do projeto
+
+---
+
+*Documentação extraída em: 12/08/2025*  
+*Fonte: APIs JallCard Pyxis v3.0.0*  
+*Mantido em: `/Projetos e demandas/Documentação APIs/`*
